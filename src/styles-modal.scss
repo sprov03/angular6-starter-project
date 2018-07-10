@@ -1,0 +1,18 @@
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+  background: #16183754;
+
+  .cdk-overlay-pane {
+    margin: 0 auto;
+
+    .mat-dialog-container {
+      max-width: 97vw;
+      width: 800px;
+      pointer-events: auto;
+      position: static;
+      margin: auto;
+      height: auto;
+    }
+  }
+}

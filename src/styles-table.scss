@@ -1,0 +1,50 @@
+@import "styles-color-variables";
+
+table.mat-table {
+  width: 100%;
+
+  td.mat-cell:last-child,
+  td.mat-footer-cell:last-child,
+  th.mat-header-cell:last-child {
+    //padding-right: 10px;
+  }
+
+  .mat-row {
+    height: inherit;
+  }
+
+  .mat-cell {
+    font-size: 80%;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .mat-header-cell {
+    font-size: 100%;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+
+  .mat-column-table-actions {
+    max-width: 45px;
+    padding-right: 5px;
+
+    i {
+      margin: 5px;
+      font-size: 120%;
+
+      &.fa-eye {
+        color: $action-view-color;
+      }
+      &.fa-trash {
+        color: $action-delete-color;
+      }
+      &.fa-pencil {
+        color: $action-edit-color;
+      }
+      &.disabled {
+        color: $action-disabled-color;
+      }
+    }
+  }
+}

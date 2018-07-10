@@ -1,0 +1,72 @@
+<div class="page-flex-container">
+  <div class="page-nav">
+    <ul>
+      <li routerLinkActive="active"><a routerLink="/documentation/sections">Sections</a></li>
+      <li routerLinkActive="active"><a routerLink="/documentation/tables">Tables</a></li>
+      <li routerLinkActive="active"><a routerLink="/documentation/modals">Modals</a></li>
+    </ul>
+  </div>
+
+  <div class="page-container">
+    <section>
+      <h2>Table Without any Pagination</h2>
+      <p>Used for situations where there will never reasonably have more then 30ish items</p>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef> Weight </th>
+          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="table-actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.loading" (click)="element.loading = false">
+            <i class="fa fa-spinner fa-spin"></i>
+        </span>
+            <span *ngIf="! element.loading" (click)="element.loading = true">
+            <i class="fa fa-trash"></i>
+              <!--<i class="fa fa-trash disabled"></i>-->
+            <i class="fa fa-pencil disabled"></i>
+              <!--<i class="fa fa-pencil"></i>-->
+              <!--<i class="fa fa-eye disabled"></i>-->
+            <i class="fa fa-eye"></i>
+        </span>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </section>
+
+  </div>
+</div>
+
+
+
+

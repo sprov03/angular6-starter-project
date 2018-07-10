@@ -1,0 +1,84 @@
+.top-nav {
+  padding: 8px;
+  background: #2d278d;
+  color: #bbbbbb;
+  font-size: 30px;
+  font-weight: bold;
+  position: fixed;
+  width: 100%;
+}
+
+// Setting up Structure
+.shell-wrapper {
+  display: flex;
+  height: 100%;
+  padding-top: 46px;
+
+  .left-nav {
+    flex: 0 0 50px;
+    height: 100%;
+    background: grey;
+    position: fixed;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-size: 30px;
+        padding: 10px;
+        color: #040023;
+        text-align: center;
+
+        &.active {
+          background: #040023;
+          color: grey;
+        }
+      }
+    }
+  }
+
+  .main-area {
+    flex: 1;
+    margin-left: 50px;
+
+    section {
+      background: #ceced8;
+      padding: 10px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+
+      ul {
+        margin-left: 15px;
+      }
+    }
+
+    .page-flex-container {
+      display: flex;
+
+      .page-nav {
+        flex: 0 0 200px;
+        height: 100%;
+        position: fixed;
+        width: 200px;
+        background: #040023;
+        color: grey;
+
+        ul {
+          list-style: none;
+          padding: 10px;
+
+          li {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .page-container {
+        flex: 1;
+        padding: 10px;
+        margin-left: 200px;
+      }
+    }
+  }
+}
+

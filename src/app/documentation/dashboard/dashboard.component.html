@@ -1,0 +1,47 @@
+<div class="page-flex-container">
+  <div class="page-nav">
+    <ul>
+      <li routerLinkActive="active"><a routerLink="/documentation/sections">Sections</a></li>
+      <li routerLinkActive="active"><a routerLink="/documentation/tables">Tables</a></li>
+      <li routerLinkActive="active"><a routerLink="/documentation/modals">Modals</a></li>
+    </ul>
+  </div>
+
+  <div class="page-container">
+    <section>
+      <h1>How to Create a New Feature/Module</h1>
+      <ul>
+        <li>Create a component in the app directory</li>
+        <li>Delete the Declaration that was generated in app.module.ts</li>
+        <li>Create a shared directory inside the new component directory</li>
+        <li>Create a model for the feature in the shared directory</li>
+        <li>Create a service for the feature in the shared directory</li>
+        <li>Create a module for the feature in the component directory</li>
+        <li>Create a routing-module for the feature in the component directory</li>
+        <li>Create mock data for the feature in the component directory</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Section Documentation</h2>
+      <p>
+        Sections Documentation: <a routerLink="/documentation/sections">Docs</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Table Documentation</h2>
+      <p>
+        Table Documentation: <a routerLink="/documentation/tables">Docs</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Modal Documentation</h2>
+      <p>
+        Modal Documentation: <a routerLink="/documentation/modals">Docs</a>
+      </p>
+    </section>
+  </div>
+</div>
+
