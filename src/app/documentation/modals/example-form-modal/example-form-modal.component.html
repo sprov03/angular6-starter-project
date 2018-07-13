@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Hero: {{formGroup.value.name}}</h2>
+
+<mat-dialog-content>
+  <section>
+    <h2>Simple Form Modal</h2>
+    <p>simple example in the modal</p>
+
+    <form [formGroup]="formGroup">
+      <mat-form-field>
+        <input matInput placeholder="Hero Name" formControlName="name">
+      </mat-form-field>
+    </form>
+
+  </section>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close class="btn btn-dark">No</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button [mat-dialog-close]="formGroup" class="btn btn-dark ml-2">Close and return form Group values</button>
+  <button mat-button class="btn btn-dark ml-2" (click)="saveFormGroup()">Save</button>
+</mat-dialog-actions>

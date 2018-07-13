@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+
+<mat-dialog-content>
+  <section>
+    <ng-container *ngTemplateOutlet="data.formComponent"></ng-container>
+  </section>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close="false" class="btn btn-dark">Cancel</button>
+  <button mat-button class="btn btn-dark ml-2" (click)="save()">Save</button>
+</mat-dialog-actions>
+
