@@ -16,6 +16,28 @@
       <br>
       <button class="btn btn-dark" (click)="openDialog()">Open Modal</button>
     </section>
+
+    <section>
+      <h2>Form Modal Example</h2>
+      <p>
+        Click the button to see the modal pop up.  Link to documentation <a href="https://material.angular.io/components/dialog/overview">Angular Material Modal</a>
+      </p>
+      <br>
+      <button class="btn btn-dark" (click)="openFormModal()">Open Modal</button>
+    </section>
+
+    <section>
+      <h2>The Application Form Modal Example</h2>
+      <p>
+        Click the button to see the modal pop up.  Link to documentation <a href="https://material.angular.io/components/dialog/overview">Angular Material Modal</a>
+      </p>
+      <br>
+
+      <button class="btn btn-dark" (click)="openAppFormModal(formComponent)">Open Modal</button>
+      <ng-template #formComponent>
+        <app-documentation-form></app-documentation-form>
+      </ng-template>
+    </section>
   </div>
 </div>
 

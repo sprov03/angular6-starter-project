@@ -7,6 +7,8 @@ import { TableComponent } from './table/table.component';
 import { ModalComponent } from './modal/modal.component';
 import { SimpleExampleModalComponent } from './modals/simple-example-modal/simple-example-modal.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ExampleFormModalComponent } from './modals/example-form-modal/example-form-modal.component';
+import { DocumentationFormComponent } from './documentation-form/documentation-form.component';
 
 @NgModule({
   imports: [
@@ -23,9 +25,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ModalComponent,
     SimpleExampleModalComponent,
     DashboardComponent,
+    ExampleFormModalComponent,
+    DocumentationFormComponent,
   ],
   entryComponents: [
     SimpleExampleModalComponent,
+    ExampleFormModalComponent,
   ]
 })
 export class DocumentationModule {
