@@ -1,4 +1,4 @@
-import {Component, ComponentFactoryResolver, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {SimpleExampleModalComponent} from '../modals/simple-example-modal/simple-example-modal.component';
 import {Hero} from '../../hero/shared/hero.model';
@@ -13,11 +13,11 @@ import {DocumentationFormComponent} from '../documentation-form/documentation-fo
   styles: []
 })
 export class ModalComponent implements OnInit {
-  constructor(public dialog: MatDialog,
-              private formBuilder: FormBuilder,
-              private vcr: ViewContainerRef,
-              private resolver : ComponentFactoryResolver,
-              ) {}
+  constructor(
+    public dialog: MatDialog,
+    private formBuilder: FormBuilder,
+  ) {}
+
   private hero: Hero = {
     id: 55,
     name: 'Shawn'
@@ -49,22 +49,24 @@ export class ModalComponent implements OnInit {
     });
   }
 
-  openAppFormModal(formComponent) {
+  openAppFormModal() {
     this.dialog.open(FormModalComponent, {
       data: {
         title: 'Testing Form Modal Title',
-        formComponent: formComponent,
-        method: this.savedMethod,
+        formComponent: DocumentationFormComponent,
+        saveMethod: this.savedMethod,
+        cancelMethod: this.savedMethod,
         formGroup: this.formBuilder.group({
-          'id': [this.hero.name, []],
+          'id': [this.hero.id, []],
           'name': [this.hero.name, []],
-        }),
+        })
       }
     });
   }
 
   savedMethod(formGroup: FormGroup) {
     console.log(formGroup);
+    console.log(formGroup.valid);
     console.log('Saved Method was Called!!!');
   }
 }
